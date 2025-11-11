@@ -1,0 +1,203 @@
+/* ----------------------------
+   Navbar.css — full corrected
+   - Dropdowns open *below* the trigger (normal dropdown)
+   - Prevent clipping (overflow visible + z-index)
+   - Smooth animations and caret rotation
+   ---------------------------- */
+
+/* NAVBAR MAIN */
+.navbar {
+  width: 100%;
+  height: 70px;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1200;          /* stays above page content */
+  overflow: visible;     /* ensure dropdown isn't clipped */
+}
+
+/* LOGO */
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0A2647;
+}
+
+.logo span {
+  color: #FFD700;
+}
+
+/* NAV RIGHT */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* DESKTOP LINKS */
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #002c5f;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* ensure each li is the positioning context for its dropdown */
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li:hover {
+  color: #0056b3;
+  cursor: pointer;
+}
+
+/* Dropdown toggle button (inline within li) */
+.dropdown-toggle {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #002c5f;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+/* visual focus for keyboard users */
+.dropdown-toggle:focus {
+  outline: 2px solid rgba(0,92,191,0.14);
+  box-shadow: 0 0 0 4px rgba(0,92,191,0.06);
+}
+
+/* caret arrow — default points down */
+.caret {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #002c5f;
+  border-bottom: 2px solid #002c5f;
+  transform: rotate(45deg); /* visually looks like a down arrow */
+  transition: transform 0.22s ease;
+  margin-top: 2px;
+}
+
+/* when open, rotate to point up */
+.caret.open {
+  transform: rotate(-135deg);
+}
+
+/* Dropdown container (hidden by default) */
+.dropdown {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);  /* place below the trigger */
+  min-width: 180px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(8, 27, 48, 0.12);
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: top center;                /* animate from top */
+  transform: translateY(-6px) scaleY(0.98);    /* start slightly up */
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 300;
+}
+
+/* show class — dropdown visible */
+.dropdown.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scaleY(1); /* slide down into place */
+}
+
+/* dropdown list style */
+.dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+}
+
+.dropdown ul li {
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #002c5f;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dropdown ul li:hover,
+.dropdown ul li:focus {
+  background: #f2f6ff;
+  color: #0056b3;
+}
+
+/* HAMBURGER */
+.hamburger {
+  width: 30px;
+  height: 22px;
+  display: none; /* hidden in desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background: #002c5f;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+/* Smooth cross animation */
+.line1.active {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.line2.active {
+  opacity: 0;
+}
+
+.line3.active {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 850px) {
+
+  .nav-links {
+    display: none;   /* hide desktop menu on mobile */
+  }
+
+  .hamburger {
+    display: flex;   /* show hamburger */
+  }
+}
+/* Remove underline + default blue color for all Navbar links */
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-links a:visited {
+  color: inherit;
+}
+
+.nav-links a:hover {
+  text-decoration: none;
+  color: #0056b3; /* your hover color */
+}

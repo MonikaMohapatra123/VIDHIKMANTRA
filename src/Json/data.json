@@ -1,0 +1,89 @@
+{
+  "0": {
+    "page": "navbar",
+    "logo": "VIDHIKMANTRA",
+    "menu": [
+      {
+        "name": "ABOUT",
+        "link": "/about",
+        "type": "single"
+      },
+      {
+        "name": "BLOG",
+        "link":"/blogs",
+        "type": "single"
+        
+      },
+      {
+        "name": "CASE STUDIES",
+        "link":"/case-studies",
+        "type": "single"
+       
+      },
+      {
+        "name": "CONTACT",
+        "link": "/contact",
+        "type": "single"
+      }
+    ]
+  },
+
+  "1": {
+    "page": "home",
+
+    "heroSection": {
+      "backgroundImage": "./law-1.jpg",
+      "brand": "Vidhik Mantra",
+      "tagline": "Your Voice in the Language of Law",
+      "subtitle": "Insightful legal analysis, simplified explanations and timely updates from Constitutional law to digital evidence and environment litigation.",
+      "ctaPrimary": {
+        "label": "Explore Articles",
+        "link": "/articles"
+      },
+      "ctaSecondary": {
+        "label": "Latest Updates →",
+        "link": "/latest"
+      },
+      "keyTopics": [
+        "Arbitration",
+        "Constitutional Law",
+        "Criminal Law",
+        "Environment",
+        "Digital Evidence"
+      ],
+      "cards": [
+        {
+          "category": "Arbitration",
+          "headline": "AI & Arbitration: How Technology Is Changing Dispute Resolution"
+        },
+        {
+          "category": "Constitutional & Public Interest",
+          "headline": "EWS Reservation: A New Phase in India’s Affirmative Action?"
+        },
+        {
+          "category": "Criminal Law",
+          "headline": "Bail Not Jail: The Evolving Face of Justice in India"
+        },
+        {
+          "category": "Environment & Rights",
+          "headline": "Right to Clean Environment: How Article 21 Protects Nature"
+        }
+      ]
+    },
+
+    "aboutSection": {
+      "image": "./law-2.png",
+      "smallHeading": "About Us",
+      "mainHeading": "Your Trusted Legal Knowledge Partner",
+      "highlight": "Knowledge Partner",
+      "paragraphs": [
+        "VidhikMantra is a platform dedicated to bringing clarity to complex legal matters. We simplify judgments, dissect legal changes, and present accurate insights to help individuals, students, and professionals make informed decisions.",
+        "Our mission is to deliver precise, research-backed information without legal jargon—making law understandable and accessible for everyone."
+      ],
+      "button": {
+        "label": "Explore Our Articles",
+        "link": "/articles"
+      }
+    }
+  }
+}

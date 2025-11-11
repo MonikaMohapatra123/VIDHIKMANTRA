@@ -1,0 +1,169 @@
+/* MobileNavbar.css — fixed so submenus show *below* the parent item */
+
+/* Container */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  padding: 18px;
+  z-index: 1000;
+  animation: slideIn 0.28s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes slideIn {
+  from { right: -100%; }
+  to { right: 0; }
+}
+
+/* top row: logo + close */
+.mobile-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.logo-mobile {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0A2647;
+}
+.logo-mobile span { color: #FFD700; }
+
+.close-btn {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: right;
+  cursor: pointer;
+  color: #002c5f;
+}
+
+/* main links container */
+.mobile-links {
+  list-style: none;
+  padding: 20px 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  justify-content: flex-start;
+}
+
+/* default link row */
+.mobile-link {
+  padding: 16px 12px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #002c5f;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* used for simple rows without submenu */
+}
+
+/* -------- Fix for items that have submenus --------
+   - Make the parent stack vertically so the submenu appears below
+   - Ensure toggle row and submenu each take full width
+----------------------------------------------------*/
+.with-sub {
+  /* make the overall list item a vertical container */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* let children take full width */
+  padding: 0;           /* we'll control padding inside children */
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* the visible toggle row (BLOG / CASE STUDIES) */
+.with-sub .mobile-toggle {
+  padding: 16px 12px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #002c5f;
+  display: flex;
+  justify-content: space-between; /* caret on the right */
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* caret - same visual style as desktop */
+.caret {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #002c5f;
+  border-bottom: 2px solid #002c5f;
+  transform: rotate(45deg);
+  transition: transform 0.18s ease;
+  margin-left: 8px;
+}
+
+.caret.open {
+  transform: rotate(-135deg);
+}
+
+/* submenu panel — now full width and positioned under the toggle row */
+.mobile-sub {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.24s ease, padding 0.18s ease;
+  padding: 0 12px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  width: 100%;        /* make submenu stretch the parent width */
+  box-sizing: border-box;
+  margin: 0;          /* no side offset */
+}
+
+/* when open, expand downward */
+.mobile-sub.show {
+  max-height: 400px; /* large enough to show items */
+  padding: 8px 12px 12px 12px;
+}
+
+/* submenu items */
+.mobile-sub-item {
+  padding: 10px 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #002c5f;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.mobile-sub-item:hover {
+  background: #f2f6ff;
+  color: #0056b3;
+}
+
+/* make single-row items still look the same */
+.mobile-link:not(.with-sub) {
+  padding: 16px 12px;
+}
+
+/* smaller screens tweaks */
+@media (max-width: 420px) {
+  .logo-mobile { font-size: 1rem; }
+  .mobile-link, .with-sub .mobile-toggle { font-size: 18px; padding: 14px 10px; }
+  .mobile-sub-item { font-size: 15px; padding: 8px 6px; }
+}
+/* Remove underline + default color in mobile menu */
+.mobile-link a,
+.mobile-sub-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mobile-link a:visited,
+.mobile-sub-item a:visited {
+  color: inherit;
+}
