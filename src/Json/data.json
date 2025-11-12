@@ -84,6 +84,32 @@
         "label": "Explore Our Articles",
         "link": "/articles"
       }
-    }
+    },
+  "heroJusticeSection": {
+  "backgroundImage": "./law-1.jpg",
+  "icon": "Scale",
+  "title": "Justice with Integrity & Excellence",
+  "subtitle": "Empowering clients with expert legal solutions tailored for every challenge.",
+  "button": {
+    "label": "Schedule a Consultation",
+    "link": "/contact"
+  },
+  "floatingIcon": {
+    "name": "Scale",
+    "size": 80
+  }
+},
+"trustedBySection": {
+  "title": "Trusted By Reputed Legal Institutions",
+  "subtitle": "Our ethical values and proven expertise have earned the trust of clients and legal institutions across the nation.",
+  "logos": [
+    { "icon": "Shield", "name": "Secure Legal Services" },
+    { "icon": "Scale", "name": "Justice League Partners" },
+    { "icon": "Landmark", "name": "National Law Board" },
+    { "icon": "Gavel", "name": "Court Certified Advocates" }
+  ]
+}
+
+
   }
 }

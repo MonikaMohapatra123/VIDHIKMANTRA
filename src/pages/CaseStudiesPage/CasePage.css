@@ -1,0 +1,134 @@
+:root {
+  --container: 1100px;
+}
+
+.cs-page-wrap {
+  padding: 28px 0 80px;
+  background: #fff;
+  color: #111;
+}
+
+.cs-hero {
+  background: linear-gradient(90deg, rgba(4,6,24,0.98), rgba(21,32,66,0.96));
+  color: white;
+  padding: 48px 0;
+  margin-bottom: 18px;
+}
+
+.cs-hero-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.cs-hero h1 {
+  font-size: 2.25rem;
+  margin: 0 0 8px;
+}
+
+.cs-hero .muted {
+  opacity: 0.9;
+}
+
+.cs-container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 10px 16px;
+}
+
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+@media (max-width: 980px) {
+  .cs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .cs-grid {
+    grid-template-columns: 1fr;
+  }
+  .cs-hero h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Article / detail */
+.cs-article-wrap {
+  padding-top: 12px;
+}
+
+.cs-article {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(13, 20, 40, 0.06);
+  overflow: hidden;
+}
+
+.cs-article-header {
+  padding: 22px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.cs-article-title {
+  margin: 0 0 8px;
+  font-size: 1.9rem;
+}
+
+.cs-article-meta {
+  color: #555;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.cs-article-hero img.cs-article-thumb {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.cs-article-content {
+  padding: 20px;
+  line-height: 1.7;
+  color: #222;
+}
+
+.cs-article-footer {
+  padding: 18px 22px;
+  border-top: 1px solid #f3f3f3;
+}
+
+.cs-tags-list .cs-tag-inline {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #f4f6fb;
+  color: #243046;
+  font-size: 0.85rem;
+}
+
+/* Reusable */
+.bm-center {
+  text-align: center;
+  padding: 18px 0;
+}
+
+.bm-err {
+  color: #b00020;
+}
+
+.bm-back-link {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #234;
+  text-decoration: none;
+}

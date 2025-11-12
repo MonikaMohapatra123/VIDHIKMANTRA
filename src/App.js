@@ -25,6 +25,8 @@ import './App.css';
 import './pages/Admin/Admin.css';
 import BlogPage from './pages/BlogPage/BlogPage';
 import BlogDetail from './pages/BlogPage/BlogDetails';
+import CaseList from './pages/CaseStudiesPage/CaseList';
+import CaseDetail from './pages/CaseStudiesPage/CaseDetail';
 
 function WebsiteLayout() {
   return (
@@ -47,6 +49,9 @@ export default function App() {
           <Route path="/" element={<Home />} />
            <Route path="/blogs" element={<BlogPage/>} />
             <Route path="blogs/:id" element={<BlogDetail/>} />
+            <Route path="/case-studies" element={<CaseList />} />
+            <Route path="/casestudies/:id" element={<CaseDetail />} />
+
            
           {/* <Route path="/about" element={<About />} />
           <Route path="/blogs" element={<BlogsPage />} />
