@@ -1,0 +1,38 @@
+/* src/pages/Admin/AdminHome.css */
+.admin-home-container {
+  padding: 40px;
+  text-align: center;
+}
+
+.admin-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.admin-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  width: 250px;
+  padding: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.admin-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 14px rgba(0,0,0,0.2);
+  border-color: #222;
+}
+
+.admin-card h3 {
+  margin-bottom: 10px;
+}
+
+.admin-card p {
+  color: #555;
+}
