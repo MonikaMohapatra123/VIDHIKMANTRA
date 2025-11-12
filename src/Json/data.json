@@ -3,11 +3,7 @@
     "page": "navbar",
     "logo": "VIDHIKMANTRA",
     "menu": [
-      {
-        "name": "ABOUT",
-        "link": "/about",
-        "type": "single"
-      },
+      
       {
         "name": "BLOG",
         "link":"/blogs",
@@ -112,4 +108,5 @@
 
 
   }
+
 }
