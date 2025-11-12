@@ -132,3 +132,33 @@
   color: #234;
   text-decoration: none;
 }
+
+
+
+
+
+
+.cs-filters {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  flex-wrap: wrap;
+}
+
+.cs-search-input,
+.cs-tag-select {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.cs-search-input:focus,
+.cs-tag-select:focus {
+  border-color: #d4af37;
+  outline: none;
+}
