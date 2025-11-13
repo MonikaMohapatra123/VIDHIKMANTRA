@@ -139,6 +139,9 @@
 
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
+    .bm-wrapper{
+       min-height: 40vh;
+    }
   .bm-thumb-wrap {
     height: 240px;
   }
