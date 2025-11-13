@@ -57,7 +57,7 @@
 
 
 /* add near bottom of BlogPage.css or create BlogDetail.css */
-.bm-back-link { display:inline-block; margin: 16px 0; color: inherit; text-decoration: none; }
+/* .bm-back-link { display:inline-block; margin: 16px 0; color: inherit; text-decoration: none; }
 .bm-article { max-width: 900px; margin: 0 auto; padding: 24px; background:black; border-radius: 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
 .bm-article-header { margin-bottom: 16px; }
 .bm-article-title { font-size: 2rem; margin: 0 0 8px; }
@@ -69,4 +69,4 @@
 .bm-page-wrap{
    
     color: rgba(236, 203, 12, 0.788);
-}
+} */

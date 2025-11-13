@@ -81,8 +81,6 @@
 
 
 
-
-
 // src/App.js
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -91,10 +89,14 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./pages/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Footer from "./pages/Footer/Footer";
+import BlogPage from "./pages/BlogPage/BlogPage";
+import BlogDetail from "./pages/BlogPage/BlogDetails";
+import CaseList from "./pages/CaseStudiesPage/CaseList";
+import CaseDetail from "./pages/CaseStudiesPage/CaseDetail";
 
 // --- Admin Pages ---
 import AdminLayout from "./pages/Admin/AdminLayout";
-import AdminHome from "./pages/Admin/AdminHome"; // ✅ new
+import AdminHome from "./pages/Admin/AdminHome";
 import BlogsList from "./pages/Admin/BlogsList";
 import AddBlog from "./pages/Admin/AddBlog";
 import EditBlog from "./pages/Admin/EditBlog";
@@ -109,18 +111,12 @@ import ProtectedRoute from "./pages/ProtectedRoute/ProtectedRoute";
 import "./App.css";
 import "./pages/Admin/Admin.css";
 
-import BlogPage from "./pages/BlogPage/BlogPage";
-import BlogDetail from "./pages/BlogPage/BlogDetails";
-import CaseList from "./pages/CaseStudiesPage/CaseList";
-import CaseDetail from "./pages/CaseStudiesPage/CaseDetail";
-
-function WebsiteLayout() {
+// ✅ Layout for public website (Navbar + Footer always visible)
+function WebsiteLayout({ children }) {
   return (
     <>
       <Navbar />
-      <main>
-        <Home />
-      </main>
+      <main>{children}</main>
       <Footer />
     </>
   );
@@ -130,17 +126,52 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Website Layout */}
-        <Route path="/" element={<WebsiteLayout />} />
-        <Route path="/blogs" element={<BlogPage />} />
-        <Route path="/blogs/:id" element={<BlogDetail />} />
-        <Route path="/case-studies" element={<CaseList />} />
-        <Route path="/casestudies/:id" element={<CaseDetail />} />
+        {/* ---------- Public Website Routes ---------- */}
+        <Route
+          path="/"
+          element={
+            <WebsiteLayout>
+              <Home />
+            </WebsiteLayout>
+          }
+        />
+        <Route
+          path="/blogs"
+          element={
+            <WebsiteLayout>
+              <BlogPage />
+            </WebsiteLayout>
+          }
+        />
+        <Route
+          path="/blogs/:id"
+          element={
+            <WebsiteLayout>
+              <BlogDetail />
+            </WebsiteLayout>
+          }
+        />
+        <Route
+          path="/case-studies"
+          element={
+            <WebsiteLayout>
+              <CaseList />
+            </WebsiteLayout>
+          }
+        />
+        <Route
+          path="/casestudies/:id"
+          element={
+            <WebsiteLayout>
+              <CaseDetail />
+            </WebsiteLayout>
+          }
+        />
 
-        {/* Admin Login */}
+        {/* ---------- Admin Login (no navbar/footer) ---------- */}
         <Route path="/admin/login" element={<Login />} />
 
-        {/* Protected Admin Section */}
+        {/* ---------- Protected Admin Routes ---------- */}
         <Route
           path="/admin"
           element={
@@ -149,7 +180,7 @@ export default function App() {
             </ProtectedRoute>
           }
         >
-          <Route index element={<AdminHome />} /> {/* ✅ New Dashboard Page */}
+          <Route index element={<AdminHome />} />
           <Route path="blogs" element={<BlogsList />} />
           <Route path="blogs/add" element={<AddBlog />} />
           <Route path="blogs/:id" element={<ViewBlog />} />
@@ -160,7 +191,7 @@ export default function App() {
           <Route path="casestudies/:id/edit" element={<EditCase />} />
         </Route>
 
-        {/* Fallback */}
+        {/* ---------- Fallback ---------- */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
