@@ -40,7 +40,6 @@ const Footer = () => {
           <ul>
             <li>About</li>
             <li>Case Studies</li>
-            <li>Insights</li>
             <li>Contact</li>
             <li>Privacy Policy</li>
           </ul>

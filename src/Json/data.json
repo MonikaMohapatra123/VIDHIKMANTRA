@@ -3,21 +3,27 @@
     "page": "navbar",
     "logo": "VIDHIKMANTRA",
     "menu": [
+      {
+        "name": "Daily Legal News",
+        "link":"/dailt-blogs",
+        "type": "single"
+        
+      },
       
       {
-        "name": "BLOG",
+        "name": "Legal Blog",
         "link":"/blogs",
         "type": "single"
         
       },
       {
-        "name": "CASE STUDIES",
+        "name": "Landmark Judgments",
         "link":"/case-studies",
         "type": "single"
        
       },
       {
-        "name": "CONTACT",
+        "name": "Contact",
         "link": "/contact",
         "type": "single"
       }
@@ -30,7 +36,7 @@
     "heroSection": {
       "backgroundImage": "./law-1.jpg",
       "brand": "Vidhik Mantra",
-      "tagline": "Your Voice in the Language of Law",
+      "tagline": "Law made easy har roz......",
       "subtitle": "Insightful legal analysis, simplified explanations and timely updates from Constitutional law to digital evidence and environment litigation.",
       "ctaPrimary": {
         "label": "Explore Articles",
@@ -104,7 +110,34 @@
     { "icon": "Landmark", "name": "National Law Board" },
     { "icon": "Gavel", "name": "Court Certified Advocates" }
   ]
+},
+"faqSection": {
+  "title": "Legal Awareness & FAQs",
+  "subtitle": "Clear answers to common legal questions — empowering you with knowledge.",
+  "faqs": [
+    {
+      "question": "How to File an FIR Online in India: Step-by-Step Guide",
+      "answer": "To file an FIR online, visit your state police website (e.g., Delhi Police, Maharashtra Police). Navigate to 'Citizen Services' → 'Lodge e-FIR'. Fill in the details like complainant name, incident description, and location. After submission, you’ll receive a confirmation and a copy of the FIR via email or SMS."
+    },
+    {
+      "question": "Legal Rights of Tenants in India: What Landlords Can and Cannot Do",
+      "answer": "Tenants are protected under the Rent Control Acts. A landlord cannot evict a tenant without a valid reason and notice. Tenants have the right to receive rent receipts, maintain peaceful possession, and are entitled to reasonable notice before rent increases or property visits by landlords."
+    },
+    {
+      "question": "How to Draft a Legal Notice: Format, Examples, and Common Mistakes",
+      "answer": "A legal notice should include the sender’s details, recipient details, subject, legal basis, facts of the case, and a demand for resolution within a specific time (usually 15–30 days). Avoid emotional language or vague statements. Use formal, factual tone and attach supporting documents if necessary."
+    },
+    {
+      "question": "Social Media and the Law: What You Can and Can’t Post in India (Explained Legally)",
+      "answer": "Under the IT Act and IPC, posting defamatory, obscene, or false content can invite legal action. Avoid hate speech, copyright violations, or sharing private information. Freedom of speech doesn’t protect defamatory or unlawful content online."
+    },
+    {
+      "question": "Workplace Harassment in India: How to File a Complaint under the POSH Act 2013",
+      "answer": "The POSH Act mandates all companies with 10+ employees to have an Internal Complaints Committee (ICC). Complaints must be filed within 3 months of the incident. The ICC investigates and recommends disciplinary action if harassment is proved."
+    }
+  ]
 }
+
 
   }
 

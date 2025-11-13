@@ -165,64 +165,74 @@
 }
 
 /* Right column: highlight cards */
-.vm-hero-right{
+/* --- Premium Card Design --- */
+.vm-hero-right {
   flex: 0 1 420px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 18px;
   align-content: start;
   min-width: 240px;
   padding: 12px;
 }
 
-/* card style */
-.vm-card{
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-  border: 1px solid var(--glass-border);
-  padding: 14px;
+/* Minimal glass cards with glow */
+.vm-card-premium {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
-  backdrop-filter: blur(6px);
-  transition: transform .22s cubic-bezier(.2,.9,.3,1), box-shadow .22s ease, background-color .22s ease;
-  cursor: pointer;
-  min-height: 86px;
+  backdrop-filter: blur(8px);
+  padding: 26px 20px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  min-height: 110px;
+  transition: all 0.35s ease;
+  box-shadow: inset 0 0 0 rgba(255,255,255,0);
 }
 
-.vm-card:hover{
-  transform: translateY(-8px);
-  box-shadow: 0 18px 40px rgba(4,8,20,0.6);
-  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+.vm-card-premium:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.08);
 }
 
-.vm-card-cat{
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: 700;
+/* Icon / Category text inside card */
+.vm-card-icon {
   color: var(--accent);
-  letter-spacing: 0.8px;
-  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  text-align: center;
 }
 
-.vm-card-title{
-  margin: 0;
-  font-size: 14px;
-  color: rgba(255,255,255,0.95);
-  line-height: 1.18;
-  font-weight: 600;
-}
-
-/* decorative wave at bottom (small) */
-.vm-hero-wave{
+/* Optional soft glowing border animation */
+.vm-card-premium:hover::after {
+  content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 48px;
-  background: linear-gradient(180deg, rgba(6,10,20,0) 0%, rgba(6,10,20,1) 100%);
-  z-index: 3;
+  inset: 0;
+  border-radius: var(--radius);
+  background: radial-gradient(
+    200px circle at var(--x, 50%) var(--y, 50%),
+    rgba(242, 201, 76, 0.25),
+    transparent 70%
+  );
+  pointer-events: none;
 }
+
+/* Responsive stacking for mobile */
+@media (max-width: 720px) {
+  .vm-hero-right {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .vm-card-premium {
+    min-height: 95px;
+  }
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 720px){
