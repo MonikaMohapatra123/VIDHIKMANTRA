@@ -1,5 +1,3 @@
-/* CSS File: src/components/CaseStudies/CaseStudies.css */
-
 :root{
   --bg:#070707;
   --card:#0f0f10;
@@ -9,25 +7,25 @@
   --glass: rgba(255,255,255,0.03);
 }
 
-.cs-section{
+.vmcs-section{
   background: linear-gradient(180deg, var(--bg) 0%, #0b0b0b 100%);
   padding: 72px 6%;
   color: #fff;
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 
-.cs-header{ text-align:center; margin-bottom:48px; }
-.cs-badge{ display:inline-block; padding:6px 14px; border-radius:999px; background:linear-gradient(90deg, rgba(210,166,93,0.12), rgba(184,137,73,0.08)); color:var(--gold-1); border:1px solid rgba(210,166,93,0.12); font-weight:600; letter-spacing:0.6px; }
-.cs-title{ font-size:36px; margin:10px 0 6px; font-weight:800; letter-spacing:-0.4px; }
-.cs-sub{ color:var(--muted); font-size:15px; max-width:760px; margin:0 auto; }
+.vmcs-header{ text-align:center; margin-bottom:48px; }
+.vmcs-badge{ display:inline-block; padding:6px 14px; border-radius:999px; background:linear-gradient(90deg, rgba(210,166,93,0.12), rgba(184,137,73,0.08)); color:var(--gold-1); border:1px solid rgba(210,166,93,0.12); font-weight:600; letter-spacing:0.6px; }
+.vmcs-title{ font-size:36px; margin:10px 0 6px; font-weight:800; letter-spacing:-0.4px; }
+.vmcs-sub{ color:var(--muted); font-size:15px; max-width:760px; margin:0 auto; }
 
 /* GRID */
-.cs-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:22px; align-items:stretch; margin-top:20px; }
-@media (max-width:980px){ .cs-grid{ grid-template-columns: repeat(2, 1fr); } }
-@media (max-width:640px){ .cs-grid{ grid-template-columns: 1fr; } }
+.vmcs-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:22px; align-items:stretch; margin-top:20px; }
+@media (max-width:980px){ .vmcs-grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width:640px){ .vmcs-grid{ grid-template-columns: 1fr; } }
 
-/* Card — bold, premium, modern */
-.cs-card{
+/* Card */
+.vmcs-card{
   position:relative;
   display:flex;
   align-items:stretch;
@@ -37,11 +35,9 @@
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   border: 1px solid rgba(255,255,255,0.03);
   transition: transform .45s cubic-bezier(.2,.9,.2,1), box-shadow .45s ease, border-color .35s ease;
-  padding:0;
 }
 
-/* Diagonal gold sliver */
-.cs-card::before{
+.vmcs-card::before{
   content:'';
   position:absolute;
   left:-40%; top:-40%;
@@ -51,43 +47,47 @@
   pointer-events:none;
 }
 
-.cs-card:hover{ transform: translateY(-10px) rotate(-0.25deg); border-color: rgba(210,166,93,0.33); box-shadow: 0 18px 40px rgba(0,0,0,0.6), 0 2px 0 rgba(210,166,93,0.06) inset; }
+.vmcs-card:hover{
+  transform: translateY(-10px) rotate(-0.25deg);
+  border-color: rgba(210,166,93,0.33);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.6), 0 2px 0 rgba(210,166,93,0.06) inset;
+}
 
-/* Left glyph column */
-.cs-card-side{
+.vmcs-card-side{
   width:84px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02)); border-right:1px solid rgba(255,255,255,0.02);
 }
-.cs-side-accent{
+.vmcs-side-accent{
   width:10px; height:52px; border-radius:6px; background: linear-gradient(180deg, var(--gold-1), var(--gold-2)); box-shadow: 0 6px 18px rgba(210,166,93,0.12);
 }
-.cs-side-number{ margin-top:12px; font-weight:800; color:rgba(255,255,255,0.06); font-size:40px; letter-spacing:3px; transform:translateY(-6px); }
+.vmcs-side-number{ margin-top:12px; font-weight:800; color:rgba(255,255,255,0.06); font-size:40px; letter-spacing:3px; transform:translateY(-6px); }
 
-/* Main content */
-.cs-card-body{ padding:22px 26px 24px 20px; flex:1; display:flex; flex-direction:column; justify-content:space-between; }
-.cs-card-title{ font-size:18.5px; font-weight:700; line-height:1.15; color:#fff; margin-bottom:8px; font-family: 'Merriweather', serif; }
-.cs-card-desc{ color:var(--muted); font-size:14.5px; line-height:1.65; opacity:0.95; }
+.vmcs-card-body{ padding:22px 26px 24px 20px; flex:1; display:flex; flex-direction:column; justify-content:space-between; }
+.vmcs-card-title{ font-size:18.5px; font-weight:700; line-height:1.15; color:#fff; margin-bottom:8px; font-family: 'Merriweather', serif; }
+.vmcs-card-desc{ color:var(--muted); font-size:14.5px; line-height:1.65; opacity:0.95; }
 
-/* Footer with glassmorphism */
-.cs-card-footer{ display:flex; align-items:center; justify-content:space-between; margin-top:18px; gap:12px; }
-.cs-cta{ display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border-radius:999px; border:1px solid rgba(210,166,93,0.12); background: linear-gradient(180deg, rgba(210,166,93,0.06), rgba(210,166,93,0.02)); color:var(--gold-1); font-weight:700; cursor:pointer; transition: transform .25s ease, background .25s ease; }
-.cs-cta:hover{ transform: translateY(-3px); background: linear-gradient(180deg, rgba(210,166,93,0.14), rgba(210,166,93,0.06)); color:#fff; }
-.cs-meta{ font-size:12px; color:#9b9b9b; }
+.vmcs-card-footer{ display:flex; align-items:center; justify-content:space-between; margin-top:18px; gap:12px; }
+.vmcs-cta{ display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border-radius:999px; border:1px solid rgba(210,166,93,0.12); background: linear-gradient(180deg, rgba(210,166,93,0.06), rgba(210,166,93,0.02)); color:var(--gold-1); font-weight:700; cursor:pointer; transition: transform .25s ease, background .25s ease; }
+.vmcs-cta:hover{ transform: translateY(-3px); background: linear-gradient(180deg, rgba(210,166,93,0.14), rgba(210,166,93,0.06)); color:#fff; }
+.vmcs-meta{ font-size:12px; color:#9b9b9b; }
 
-/* Decorative glass badge */
-.cs-glow{ position:absolute; right:-40px; bottom:-40px; width:160px; height:160px; border-radius:50%; background: radial-gradient(circle at 30% 30%, rgba(210,166,93,0.08), transparent 35%); filter: blur(10px); opacity:0.8; pointer-events:none; transform:translateZ(0); }
+.vmcs-glow{ position:absolute; right:-40px; bottom:-40px; width:160px; height:160px; border-radius:50%; background: radial-gradient(circle at 30% 30%, rgba(210,166,93,0.08), transparent 35%); filter: blur(10px); opacity:0.8; pointer-events:none; }
 
-/* Micro interactions for mobile */
-@media (hover:none){ .cs-card{ transition:none; } .cs-card:hover{ transform:none; box-shadow:none; } }
+/* Scale rhythm */
+.vmcs-scale-1{ transform-origin:center left; }
+.vmcs-scale-2{ transform-origin:center left; }
+.vmcs-scale-3{ transform-origin:center left; }
 
-/* Accessibility tweaks */
-.cs-cta:focus{ outline:3px solid rgba(210,166,93,0.18); outline-offset:3px; }
+@media (hover:none){
+  .vmcs-card{ transition:none; }
+  .vmcs-card:hover{ transform:none; box-shadow:none; }
+}
 
-/* Small variants to add visual rhythm */
-.cs-scale-1{ transform-origin:center left; }
-.cs-scale-2{ transform-origin:center left; }
-.cs-scale-3{ transform-origin:center left; }
+@media (max-width:420px){
+  .vmcs-card-side{ width:64px; }
+  .vmcs-side-number{ font-size:32px; }
+}
+.vmcs-card-footer a{
+  text-decoration: none;
+  white-space: nowrap;
 
-/* optional: reduce left side on very small screens */
-@media (max-width:420px){ .cs-card-side{ width:64px; } .cs-side-number{ font-size:32px; } }
-
-/* End of file */
+}

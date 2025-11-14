@@ -121,11 +121,11 @@ const HeroSection = () => {
             </a>
           </div>
 
-          <ul className="vm-keytopics">
+          {/* <ul className="vm-keytopics">
             {hero.keyTopics.map((topic, idx) => (
               <li key={idx}>{topic}</li>
             ))}
-          </ul>
+          </ul> */}
         </div>
 
         {/* RIGHT SIDE - refined cards */}

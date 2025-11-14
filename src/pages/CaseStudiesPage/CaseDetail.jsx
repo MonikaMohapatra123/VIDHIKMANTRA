@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
-import './CasePage.css';
+import './CaseDeatils.css';
 
 const BACKEND = process.env.REACT_APP_BACKEND_URL || 'https://vidhik-mantra-backend.vercel.app';
 
@@ -54,7 +54,7 @@ export default function CaseDetail() {
   return (
     <section className="cs-page-wrap">
       <div className="cs-container cs-article-wrap">
-        <Link to="/casestudies" className="bm-back-link">← Back to case studies</Link>
+        <Link to="/case-studies" className="bm-back-link">← Back to case studies</Link>
 
         <article className="cs-article">
           <header className="cs-article-header">

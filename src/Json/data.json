@@ -26,7 +26,7 @@
       },
       "ctaSecondary": {
         "label": "Latest Updates →",
-        "link": "/latest"
+        "link": "/dailynews"
       },
       "keyTopics": [
         "Trending",
@@ -66,7 +66,7 @@
       ],
       "button": {
         "label": "Explore Our Articles",
-        "link": "/articles"
+        "link": "/case-studies"
       }
     },
   "heroJusticeSection": {
@@ -118,9 +118,89 @@
       "answer": "The POSH Act mandates all companies with 10+ employees to have an Internal Complaints Committee (ICC). Complaints must be filed within 3 months of the incident. The ICC investigates and recommends disciplinary action if harassment is proved."
     }
   ]
+},
+"caseStudiesSection": {
+  "badge": "Selected Works",
+  "title": "Case Studies",
+  "subtitle": "High-impact legal solutions — confidential, strategic, proven.",
+  "items": [
+    {
+      "id": 1,
+      "number": "01",
+      "title": "High-Value Arbitration Settled Successfully",
+      "summary": "We represented a corporate client in a complex arbitration matter involving a multi-crore dispute and achieved a favourable award.",
+      "meta": "Confidential • Corporate",
+      "button": {
+        "label": "Read case",
+        "link": "/case-studies"
+      }
+    },
+    {
+      "id": 2,
+      "number": "02",
+      "title": "Landmark Corporate Compliance Case",
+      "summary": "Our legal strategy protected the client from heavy penalties and set a compliance benchmark in the industry.",
+      "meta": "Confidential • Corporate",
+      "button": {
+        "label": "Read case",
+        "link": "/case-studies"
+      }
+    },
+    {
+      "id": 3,
+      "number": "03",
+      "title": "Real Estate Dispute Resolved Before Trial",
+      "summary": "Through strategic negotiations, a 5-year real estate conflict was resolved without litigation.",
+      "meta": "Confidential • Corporate",
+      "button": {
+        "label": "Read case",
+        "link": "/case-studies"
+      }
+    }
+  ]
 }
 
 
+
   }
+  ,
+
+  "2": {
+    "page": "footer",
+    "topbarText": "Advocating Integrity. Delivering Justice.",
+    "brand": {
+      "logo": "/logo.png",
+      "description": "A trusted legal platform committed to providing ethical, strategic and result-oriented advocacy."
+    },
+    "practiceAreas": {
+      "title": "Practice Areas",
+      "items": [
+        { "name": "Arbitration", "link": "/arbitration" },
+        { "name": "Civil & Property Disputes", "link": "/civil-property" },
+        { "name": "Criminal Law", "link": "/criminal-law" },
+        { "name": "Corporate Law", "link": "/corporate-law" },
+        { "name": "Constitutional Matters", "link": "/constitutional" }
+      ]
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "items": [
+        { "name": "About",    "link": "/about" },
+        { "name": "Case Studies", "link": "/case-studies" },
+        { "name": "Contact",  "link": "/contact" },
+        { "name": "Privacy Policy", "link": "/privacy-policy" }
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "address": "Bhubaneswar, Odisha, India",
+      "phone": "+91 98765 43210",
+      "email": "contact@vidhikmantra.com"
+    },
+    "copyright":
+      "© 2025 VIDHIKMANTRA. All Rights Reserved."
+  }
+
+
 
 }

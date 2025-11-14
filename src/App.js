@@ -91,9 +91,8 @@ import Home from "./pages/Home/Home";
 import Footer from "./pages/Footer/Footer";
 import BlogPage from "./pages/BlogPage/BlogPage";
 import BlogDetail from "./pages/BlogPage/BlogDetails";
-import CaseList from "./pages/CaseStudiesPage/CaseList";
 import CaseDetail from "./pages/CaseStudiesPage/CaseDetail";
-
+import CasePage from "./pages/CaseStudiesPage/CasePage";
 // --- Admin Pages ---
 import AdminLayout from "./pages/Admin/AdminLayout";
 import AdminHome from "./pages/Admin/AdminHome";
@@ -119,6 +118,7 @@ import DailyNewsList from "./pages/Admin/DailyNewsList";
 import DailyNewsPage from "./pages/DailyNews/DailyNewsPage";
 import DailyNewsDetail from "./pages/DailyNews/DailyNewsDetail";
 
+
 // ✅ Layout for public website (Navbar + Footer always visible)
 function WebsiteLayout({ children }) {
   return (
@@ -138,7 +138,7 @@ export default function App() {
        <Route path="/" element={<WebsiteLayout><Home /></WebsiteLayout>} />
 <Route path="/blogs" element={<WebsiteLayout><BlogPage /></WebsiteLayout>} />
 <Route path="/blogs/:id" element={<WebsiteLayout><BlogDetail /></WebsiteLayout>} />
-<Route path="/case-studies" element={<WebsiteLayout><CaseList /></WebsiteLayout>} />
+<Route path="/case-studies" element={<WebsiteLayout><CasePage /></WebsiteLayout>} />
 <Route path="/casestudies/:id" element={<WebsiteLayout><CaseDetail /></WebsiteLayout>} />
 <Route path="/dailynews" element={<WebsiteLayout><DailyNewsPage /></WebsiteLayout>} />
 <Route path="/dailynews/:id" element={<WebsiteLayout><DailyNewsDetail /></WebsiteLayout>} />

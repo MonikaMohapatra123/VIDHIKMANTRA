@@ -118,6 +118,7 @@
   transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
   box-shadow: 0 4px 20px rgba(2,6,23,0.45);
   will-change: transform;
+ 
 }
 
 /* primary filled button */

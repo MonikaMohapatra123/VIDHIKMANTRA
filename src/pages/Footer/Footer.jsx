@@ -1,13 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import footerData from "../../Json/data.json"; // adjust path
 import "./Footer.css";
 
 const Footer = () => {
+  const data = footerData["2"]; // footer JSON block
+
+  if (!data) return null;
+
   return (
     <footer className="vm-footer">
 
       {/* TOP BAR */}
       <div className="vm-topbar">
-        <p>Advocating Integrity. Delivering Justice.</p>
+        <p>{data.topbarText}</p>
       </div>
 
       {/* MAIN FOOTER */}
@@ -15,48 +21,49 @@ const Footer = () => {
 
         {/* COLUMN 1 — BRAND */}
         <div className="vm-col">
-          <h2 className="vm-logo"><img alt="new" src="./logo.png"/></h2>
-          <p className="vm-desc">
-            A trusted legal platform committed to providing ethical,
-            strategic and result-oriented advocacy.
-          </p>
+          <h2 className="vm-logo">
+            <img src={data.brand.logo} alt="logo" />
+          </h2>
+          <p className="vm-desc">{data.brand.description}</p>
         </div>
 
         {/* COLUMN 2 — PRACTICE AREAS */}
         <div className="vm-col">
-          <h4>Practice Areas</h4>
+          <h4>{data.practiceAreas.title}</h4>
           <ul>
-            <li>Arbitration</li>
-            <li>Civil & Property Disputes</li>
-            <li>Criminal Law</li>
-            <li>Corporate Law</li>
-            <li>Constitutional Matters</li>
+            {data.practiceAreas.items.map((item, i) => (
+              <li key={i}>
+                <Link to={item.link}>{item.name}</Link>
+              </li>
+            ))}
           </ul>
         </div>
 
         {/* COLUMN 3 — QUICK LINKS */}
         <div className="vm-col">
-          <h4>Quick Links</h4>
+          <h4>{data.quickLinks.title}</h4>
           <ul>
-            <li>About</li>
-            <li>Case Studies</li>
-            <li>Contact</li>
-            <li>Privacy Policy</li>
+            {data.quickLinks.items.map((item, i) => (
+              <li key={i}>
+                <Link to={item.link}>{item.name}</Link>
+              </li>
+            ))}
           </ul>
         </div>
 
         {/* COLUMN 4 — CONTACT */}
         <div className="vm-col">
-          <h4>Contact</h4>
-          <p>Bhubaneswar, Odisha, India</p>
-          <p>Phone: +91 98765 43210</p>
-          <p>Email: contact@vidhikmantra.com</p>
+          <h4>{data.contact.title}</h4>
+          <p>{data.contact.address}</p>
+          <p>Phone: {data.contact.phone}</p>
+          <p>Email: {data.contact.email}</p>
         </div>
+
       </div>
 
-      {/* COPYRIGHT BAR */}
+      {/* COPYRIGHT */}
       <div className="vm-bottom">
-        © 2025 VIDHIKMANTRA. All Rights Reserved.
+        {data.copyright}
       </div>
 
     </footer>
