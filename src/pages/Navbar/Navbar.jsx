@@ -1,4 +1,3 @@
-// src/pages/Navbar/Navbar.jsx
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
@@ -6,8 +5,7 @@ import MobileNavbar from "./MobileNavbar";
 import navData from "../../Json/data.json";
 
 const Navbar = () => {
-  const navbar = navData["0"]; // load JSON
-
+  const navbar = navData["0"];
   const [open, setOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const dropdownRef = useRef(null);
@@ -18,8 +16,18 @@ const Navbar = () => {
         setOpenDropdown(null);
       }
     }
+    function handleEsc(e) {
+      if (e.key === "Escape") {
+        setOpenDropdown(null);
+        setOpen(false);
+      }
+    }
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEsc);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEsc);
+    };
   }, []);
 
   const toggleDropdown = (name) => {
@@ -28,45 +36,56 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar">
-        {/* LEFT — LOGO */}
-        <h1 className="logo">
-          <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
-            VIDHIK<span>MANTRA</span>
-          </Link>
-        </h1>
+    <nav className="vm-navbar vm-navbar-minimal" role="navigation" aria-label="Main navigation">
 
-        {/* RIGHT — DESKTOP LINKS + MOBILE HAMBURGER */}
-        <div className="nav-right">
-          <ul className="nav-links" ref={dropdownRef}>
+        <div className="vm-navbar-left">
+          <Link to="/" className="vm-logo-wrap" aria-label={`${navbar.siteName} - Home`}>
+            <img src={navbar.logo} alt="logo" className="vm-logo-img" />
+            <div className="vm-site-text">
+              <span className="vm-site-name">{navbar.siteName}</span>
+              {navbar.tag && <span className="vm-site-tag">{navbar.tag}</span>}
+            </div>
+          </Link>
+        </div>
+
+        <div className="vm-navbar-right">
+          <ul className="vm-nav-links" ref={dropdownRef}>
             {navbar.menu.map((item) =>
               item.type === "single" ? (
-                <li key={item.name}>
-                  <Link to={item.link}>{item.name}</Link>
+                <li key={item.name} className="vm-nav-item">
+                  <Link to={item.link} className="vm-nav-link" onClick={() => setOpen(false)}>
+                    {item.name}
+                  </Link>
                 </li>
               ) : (
-                <li key={item.name} className="nav-item dropdown-wrapper">
+                <li key={item.name} className="vm-nav-item dropdown-wrapper">
                   <button
-                    className="dropdown-toggle"
+                    className="vm-dropdown-toggle"
                     onClick={() => toggleDropdown(item.name)}
+                    aria-expanded={openDropdown === item.name}
+                    aria-controls={`menu-${item.name}`}
                   >
                     {item.name}
-                    <span
-                      className={`caret ${
-                        openDropdown === item.name ? "open" : ""
-                      }`}
-                    />
+                    <span className={`vm-caret ${openDropdown === item.name ? "open" : ""}`} />
                   </button>
 
                   <div
-                    className={`dropdown dropup ${
-                      openDropdown === item.name ? "show" : ""
-                    }`}
+                    id={`menu-${item.name}`}
+                    className={`vm-dropdown ${openDropdown === item.name ? "show" : ""}`}
+                    role="menu"
+                    aria-hidden={openDropdown !== item.name}
                   >
                     <ul>
-                      {item.items.map((sub) => (
-                        <li key={sub.name}>
-                          <Link to={sub.link} onClick={() => setOpenDropdown(null)}>
+                      {item.items?.map((sub) => (
+                        <li key={sub.name} role="none">
+                          <Link
+                            role="menuitem"
+                            to={sub.link}
+                            onClick={() => {
+                              setOpenDropdown(null);
+                              setOpen(false);
+                            }}
+                          >
                             {sub.name}
                           </Link>
                         </li>
@@ -78,17 +97,16 @@ const Navbar = () => {
             )}
           </ul>
 
-          {/* MOBILE HAMBURGER */}
-          <div
-            className="hamburger"
+          <button
+            className="vm-hamburger"
             onClick={() => setOpen(!open)}
-            role="button"
             aria-label="Toggle menu"
+            aria-expanded={open}
           >
-            <span className={open ? "line line1 active" : "line line1"}></span>
-            <span className={open ? "line line2 active" : "line line2"}></span>
-            <span className={open ? "line line3 active" : "line line3"}></span>
-          </div>
+            <span className={open ? "vm-line vm-l1 active" : "vm-line vm-l1"} />
+            <span className={open ? "vm-line vm-l2 active" : "vm-line vm-l2"} />
+            <span className={open ? "vm-line vm-l3 active" : "vm-line vm-l3"} />
+          </button>
         </div>
       </nav>
 

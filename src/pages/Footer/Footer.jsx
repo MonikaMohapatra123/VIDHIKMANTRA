@@ -15,7 +15,7 @@ const Footer = () => {
 
         {/* COLUMN 1 — BRAND */}
         <div className="vm-col">
-          <h2 className="vm-logo">VIDHIK<span>MANTRA</span></h2>
+          <h2 className="vm-logo"><img alt="new" src="./logo.png"/></h2>
           <p className="vm-desc">
             A trusted legal platform committed to providing ethical,
             strategic and result-oriented advocacy.

@@ -5,6 +5,7 @@ import HeroSection from "../../components/HeroSection/HeroSection";
 import AboutVidhikMantra from "../../components/AboutVidhikMantra/AboutVidhikMantra";
 import HeroJusticeSection from "../../components/HeroJusticeSection/HeroJusticeSection";
 import FaqSection from "../../components/FaqSection/FaqSection";
+import CaseStudies from "../../components/CaseStudies/CaseStudies";
 
 const Home = () => {
   const aboutData = jsonData["1"].aboutSection;
@@ -19,6 +20,7 @@ const Home = () => {
       <HeroJusticeSection data={heroJusticeData} />
       {/* <TrustedBySection data={trustedByData} /> */}
       <FaqSection faqSection={faqSectionData} />
+      <CaseStudies/>
     </div>
   );
 };

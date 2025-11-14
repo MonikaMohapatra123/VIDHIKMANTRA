@@ -1,0 +1,78 @@
+.case-section {
+  padding: 70px 9%;
+  background: #0d0d0d; /* premium black */
+}
+
+.case-title-block h2 {
+  font-size: 34px;
+  color: white;
+  font-weight: 700;
+}
+
+.case-title-block p {
+  color: #c0c0c0;
+  margin-top: 6px;
+  margin-bottom: 40px;
+}
+
+.case-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* PREMIUM CARD */
+.case-premium-card {
+  display: flex;
+  background: #141414;
+  border-radius: 12px;
+  border: 1px solid #1f1f1f;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+}
+
+.case-premium-card:hover {
+  transform: translateY(-5px);
+  border-color: #d2a65d;
+  box-shadow: 0 6px 20px rgba(210, 166, 93, 0.25);
+}
+
+/* GOLD LEFT BAR */
+.left-bar {
+  width: 6px;
+  background: linear-gradient(180deg, #d2a65d, #b88949);
+}
+
+/* CONTENT AREA */
+.case-content {
+  padding: 25px 28px;
+}
+
+.case-content h3 {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.case-content p {
+  color: #bfbfbf;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* READ MORE */
+.case-readmore {
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: #d2a65d;
+  transition: 0.3s;
+}
+
+.case-readmore:hover {
+  color: white;
+}

@@ -1,0 +1,17 @@
+/* minimal, premium look */
+.cm-min{font-family:Inter,system-ui,Arial; max-width:720px; margin:24px auto; padding:18px}
+.cm-min-card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 8px 24px rgba(2,6,23,0.06);border:1px solid rgba(10,10,10,0.04)}
+.cm-min-title{margin:0;font-size:18px;color:#0f1724}
+.cm-min-sub{margin:6px 0 14px;color:#475569;font-size:13px}
+.cm-min-form input,.cm-min-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);margin-bottom:10px;font-size:14px}
+.cm-min-form textarea{min-height:100px;resize:vertical}
+.cm-min-row{display:flex;align-items:center;gap:12px}
+.cm-min-btn{background:linear-gradient(90deg,#f6c200,#f1b000);border:none;padding:10px 14px;border-radius:8px;font-weight:600;cursor:pointer}
+.cm-min-status{font-size:13px;color:#334155}
+.cm-min-status.ok{color:#064e3b}
+.cm-min-status.err{color:#7f1d1d}
+.cm-min-contact{display:flex;gap:12px;margin-top:14px}
+.cm-min-link{background:rgba(15,23,42,0.03);padding:8px 10px;border-radius:8px;text-decoration:none;color:inherit;font-size:13px}
+
+
+@media(max-width:520px){.cm-min-card{padding:14px}.cm-min-row{flex-direction:column;align-items:stretch}.cm-min-btn{width:100%}}

@@ -1,34 +1,16 @@
 {
   "0": {
-    "page": "navbar",
-    "logo": "VIDHIKMANTRA",
-    "menu": [
-      {
-        "name": "Daily Legal News",
-        "link":"/dailt-blogs",
-        "type": "single"
-        
-      },
-      
-      {
-        "name": "Legal Blog",
-        "link":"/blogs",
-        "type": "single"
-        
-      },
-      {
-        "name": "Landmark Judgments",
-        "link":"/case-studies",
-        "type": "single"
-       
-      },
-      {
-        "name": "Contact",
-        "link": "/contact",
-        "type": "single"
-      }
-    ]
-  },
+  "page": "navbar",
+  "logo": "/logo.png",
+  "siteName": "VIDHIK MANTRA",
+  "menu": [
+    { "name": "Daily Legal News", "link": "/dailt-blogs", "type": "single" },
+    { "name": "Legal Blog", "link": "/blogs", "type": "single" },
+    { "name": "Landmark Judgments", "link": "/case-studies", "type": "single" },
+    { "name": "Contact", "link": "/contact", "type": "single" }
+  ]
+}
+,
 
   "1": {
     "page": "home",
@@ -40,18 +22,18 @@
       "subtitle": "Insightful legal analysis, simplified explanations and timely updates from Constitutional law to digital evidence and environment litigation.",
       "ctaPrimary": {
         "label": "Explore Articles",
-        "link": "/articles"
+        "link": "/case-studies"
       },
       "ctaSecondary": {
         "label": "Latest Updates →",
         "link": "/latest"
       },
       "keyTopics": [
-        "Arbitration",
-        "Constitutional Law",
-        "Criminal Law",
-        "Environment",
-        "Digital Evidence"
+        "Trending",
+        "Blog",
+        "Article",
+        "Environment"
+        
       ],
       "cards": [
         {

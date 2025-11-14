@@ -110,6 +110,7 @@ import ProtectedRoute from "./pages/ProtectedRoute/ProtectedRoute";
 
 import "./App.css";
 import "./pages/Admin/Admin.css";
+import Contact from "./components/Contact/Contact";
 
 // ✅ Layout for public website (Navbar + Footer always visible)
 function WebsiteLayout({ children }) {
@@ -167,6 +168,15 @@ export default function App() {
             </WebsiteLayout>
           }
         />
+         <Route
+          path="/contact"
+          element={
+            <WebsiteLayout>
+              <Contact />
+            </WebsiteLayout>
+          }
+        />
+       
 
         {/* ---------- Admin Login (no navbar/footer) ---------- */}
         <Route path="/admin/login" element={<Login />} />
