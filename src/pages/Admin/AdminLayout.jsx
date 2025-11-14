@@ -33,6 +33,10 @@ export default function AdminLayout() {
           <Link to="/admin/casestudies" style={{ color: "#fff", textDecoration: "none" }}>
             Case Studies
           </Link>
+          <Link to="/admin/dailynews" style={{ color: "#fff", textDecoration: "none" }}>
+  Daily News
+</Link>
+
         </div>
         <button
           onClick={handleLogout}

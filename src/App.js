@@ -111,6 +111,13 @@ import ProtectedRoute from "./pages/ProtectedRoute/ProtectedRoute";
 import "./App.css";
 import "./pages/Admin/Admin.css";
 import Contact from "./components/Contact/Contact";
+import ViewDailyNews from "./pages/Admin/ViewDailyNews";
+import AddDailyNews from "./pages/Admin/AddDailyNews";
+import { CgEditBlackPoint } from "react-icons/cg";
+import EditDailyNews from "./pages/Admin/EditDailyNews";
+import DailyNewsList from "./pages/Admin/DailyNewsList";
+import DailyNewsPage from "./pages/DailyNews/DailyNewsPage";
+import DailyNewsDetail from "./pages/DailyNews/DailyNewsDetail";
 
 // ✅ Layout for public website (Navbar + Footer always visible)
 function WebsiteLayout({ children }) {
@@ -128,54 +135,15 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         {/* ---------- Public Website Routes ---------- */}
-        <Route
-          path="/"
-          element={
-            <WebsiteLayout>
-              <Home />
-            </WebsiteLayout>
-          }
-        />
-        <Route
-          path="/blogs"
-          element={
-            <WebsiteLayout>
-              <BlogPage />
-            </WebsiteLayout>
-          }
-        />
-        <Route
-          path="/blogs/:id"
-          element={
-            <WebsiteLayout>
-              <BlogDetail />
-            </WebsiteLayout>
-          }
-        />
-        <Route
-          path="/case-studies"
-          element={
-            <WebsiteLayout>
-              <CaseList />
-            </WebsiteLayout>
-          }
-        />
-        <Route
-          path="/casestudies/:id"
-          element={
-            <WebsiteLayout>
-              <CaseDetail />
-            </WebsiteLayout>
-          }
-        />
-         <Route
-          path="/contact"
-          element={
-            <WebsiteLayout>
-              <Contact />
-            </WebsiteLayout>
-          }
-        />
+       <Route path="/" element={<WebsiteLayout><Home /></WebsiteLayout>} />
+<Route path="/blogs" element={<WebsiteLayout><BlogPage /></WebsiteLayout>} />
+<Route path="/blogs/:id" element={<WebsiteLayout><BlogDetail /></WebsiteLayout>} />
+<Route path="/case-studies" element={<WebsiteLayout><CaseList /></WebsiteLayout>} />
+<Route path="/casestudies/:id" element={<WebsiteLayout><CaseDetail /></WebsiteLayout>} />
+<Route path="/dailynews" element={<WebsiteLayout><DailyNewsPage /></WebsiteLayout>} />
+<Route path="/dailynews/:id" element={<WebsiteLayout><DailyNewsDetail /></WebsiteLayout>} />
+<Route path="/contact" element={<WebsiteLayout><Contact /></WebsiteLayout>} />
+
        
 
         {/* ---------- Admin Login (no navbar/footer) ---------- */}
@@ -199,6 +167,11 @@ export default function App() {
           <Route path="casestudies/add" element={<AddCase />} />
           <Route path="casestudies/:id" element={<ViewCase />} />
           <Route path="casestudies/:id/edit" element={<EditCase />} />
+          <Route path="/admin/dailynews" element={<DailyNewsList />} />
+          <Route path="/admin/dailynews/add" element={<AddDailyNews />} />
+          <Route path="/admin/dailynews/:id" element={<ViewDailyNews />} />
+          <Route path="/admin/dailynews/:id/edit" element={<EditDailyNews />} />
+
         </Route>
 
         {/* ---------- Fallback ---------- */}

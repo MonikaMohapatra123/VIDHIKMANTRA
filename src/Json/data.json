@@ -4,7 +4,7 @@
   "logo": "/logo.png",
   "siteName": "VIDHIK MANTRA",
   "menu": [
-    { "name": "Daily Legal News", "link": "/dailt-blogs", "type": "single" },
+    { "name": "Daily Legal News", "link": "/dailynews", "type": "single" },
     { "name": "Legal Blog", "link": "/blogs", "type": "single" },
     { "name": "Landmark Judgments", "link": "/case-studies", "type": "single" },
     { "name": "Contact", "link": "/contact", "type": "single" }

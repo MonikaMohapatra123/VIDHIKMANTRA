@@ -27,6 +27,14 @@ export default function AdminHome() {
           <h3>⚖️ Case Studies</h3>
           <p>Manage your legal case studies here.</p>
         </div>
+        <div
+            className="admin-card"
+            onClick={() => navigate("/admin/dailynews")}
+          >
+            <h3>🗞 Daily News</h3>
+            <p>Manage all daily legal news.</p>
+          </div>
+
       </div>
     </div>
   );

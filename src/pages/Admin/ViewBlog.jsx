@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import "./ViewBlog.css"; // 👈 You can style this page separately
+// import "./ViewBlog.css"; // 👈 You can style this page separately
 
 const BACKEND =
   process.env.REACT_APP_BACKEND_URL ||
