@@ -1,6 +1,6 @@
-/* ------------------------------
-   Layout Wrapper
------------------------------- */
+/* ============================================================
+   MAIN WRAPPER
+============================================================ */
 .cs-page-wrap {
   width: 100%;
   background: #fafafa;
@@ -8,50 +8,63 @@
   min-height: 100vh;
 }
 
-/* ------------------------------
-   Hero Section
------------------------------- */
+/* ============================================================
+   HERO SECTION
+============================================================ */
 .cs-hero {
   background: #111;
   color: #fff;
-  padding: 60px 20px;
+  padding: 70px 20px;
   text-align: center;
 }
 
 .cs-hero-inner h1 {
-  font-size: 40px;
+  font-size: 42px;
   margin-bottom: 8px;
   font-weight: 700;
 }
 
 .cs-hero-inner .muted {
-  font-size: 17px;
+  font-size: 18px;
   opacity: 0.85;
+  max-width: 600px;
+  margin: auto;
 }
 
-/* ------------------------------
-   Container
------------------------------- */
+/* Mobile Hero */
+@media (max-width: 600px) {
+  .cs-hero-inner h1 {
+    font-size: 28px;
+  }
+  .cs-hero-inner .muted {
+    font-size: 15px;
+  }
+}
+
+/* ============================================================
+   CONTAINER
+============================================================ */
 .cs-container {
-  width: 90%;
+  width: 92%;
   max-width: 1200px;
   margin: auto;
 }
 
-/* ------------------------------
-   Tag Filter Bar
------------------------------- */
+/* ============================================================
+   TAG FILTER BAR
+============================================================ */
 .cs-tags-bar {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin: 30px auto;
+  margin: 24px auto 10px auto;
   flex-wrap: wrap;
+  padding-bottom: 10px;
 }
 
 /* Tag Pills */
 .cs-tag-pill {
-  padding: 10px 20px;
+  padding: 10px 18px;
   font-size: 15px;
   background: #ffffff;
   border: 1px solid #ddd;
@@ -59,10 +72,12 @@
   cursor: pointer;
   transition: 0.25s ease;
   color: #333;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
 
 .cs-tag-pill:hover {
   border-color: #111;
+  transform: translateY(-2px);
 }
 
 /* Active Tag */
@@ -70,11 +85,33 @@
   background: #111;
   color: #fff;
   border-color: #111;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-/* ------------------------------
-   Case Grid
------------------------------- */
+/* Mobile tags: scrollable, compact */
+@media (max-width: 480px) {
+  .cs-tags-bar {
+    gap: 8px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 0 4px 6px;
+    scrollbar-width: none;
+  }
+
+  .cs-tags-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cs-tag-pill {
+    white-space: nowrap;
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+}
+
+/* ============================================================
+   CASE GRID
+============================================================ */
 .cs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
@@ -82,11 +119,25 @@
   margin-top: 20px;
 }
 
-/* Center Messages */
+/* Mobile layout: single column */
+@media (max-width: 600px) {
+  .cs-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* ============================================================
+   CENTER MESSAGES
+============================================================ */
 .bm-center {
   text-align: center;
   margin-top: 30px;
+  font-size: 16px;
+  opacity: 0.7;
 }
+
 .bm-err {
   color: tomato;
+  font-weight: 600;
 }

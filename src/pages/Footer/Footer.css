@@ -97,3 +97,10 @@
   color: #9c9c9c;
   letter-spacing: 0.3px;
 }
+
+@media (max-width: 768px) {
+.vm-logo img {
+  margin-left: 0;
+}
+
+}

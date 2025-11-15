@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import footerData from "../../Json/data.json"; // adjust path
 import "./Footer.css";
 
-const Footer = () => {
-  const data = footerData["2"]; // footer JSON block
+import { getstoredata } from "../../Json/fetchData";
 
-  if (!data) return null;
+const Footer = () => {
+  const [data, setData] = useState(null);
+
+  // Load footer JSON (key "2") from localStorage
+  useEffect(() => {
+    const stored = getstoredata();
+
+    if (stored) {
+      setData(stored["2"]); // footer block
+    } else {
+      // fetchData.js might still be fetching → retry
+      const timer = setTimeout(() => {
+        const retry = getstoredata();
+        if (retry) setData(retry["2"]);
+      }, 500);
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  if (!data) return null; // wait for data
 
   return (
     <footer className="vm-footer">

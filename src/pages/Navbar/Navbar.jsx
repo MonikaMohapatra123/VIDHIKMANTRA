@@ -1,29 +1,52 @@
+
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import MobileNavbar from "./MobileNavbar";
-import navData from "../../Json/data.json";
+
+import { getstoredata } from "../../Json/fetchData";
 
 const Navbar = () => {
-  const navbar = navData["0"];
+  const [navbar, setNavbar] = useState(null);
   const [open, setOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const dropdownRef = useRef(null);
 
+  // Load navbar data from fetchData.js (localStorage)
+  useEffect(() => {
+    const stored = getstoredata();
+
+    if (stored) {
+      setNavbar(stored["0"]);   // navbar data is in key "0"
+    } else {
+      // try after fetchData.js finishes loading
+      const timer = setTimeout(() => {
+        const retryData = getstoredata();
+        if (retryData) setNavbar(retryData["0"]);
+      }, 500);
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  // Handle click outside dropdown + ESC key
   useEffect(() => {
     function handleClickOutside(e) {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setOpenDropdown(null);
       }
     }
+
     function handleEsc(e) {
       if (e.key === "Escape") {
         setOpenDropdown(null);
         setOpen(false);
       }
     }
+
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("keydown", handleEsc);
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", handleEsc);
@@ -34,10 +57,11 @@ const Navbar = () => {
     setOpenDropdown((prev) => (prev === name ? null : name));
   };
 
+  if (!navbar) return null; // wait until data loads
+
   return (
     <>
-    <nav className="vm-navbar vm-navbar-minimal" role="navigation" aria-label="Main navigation">
-
+      <nav className="vm-navbar vm-navbar-minimal" role="navigation" aria-label="Main navigation">
         <div className="vm-navbar-left">
           <Link to="/" className="vm-logo-wrap" aria-label={`${navbar.siteName} - Home`}>
             <img src={navbar.logo} alt="logo" className="vm-logo-img" />
@@ -50,7 +74,7 @@ const Navbar = () => {
 
         <div className="vm-navbar-right">
           <ul className="vm-nav-links" ref={dropdownRef}>
-            {navbar.menu.map((item) =>
+            {navbar.menu?.map((item) =>
               item.type === "single" ? (
                 <li key={item.name} className="vm-nav-item">
                   <Link to={item.link} className="vm-nav-link" onClick={() => setOpen(false)}>
@@ -116,3 +140,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

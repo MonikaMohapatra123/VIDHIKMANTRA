@@ -1,14 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./MobileNavbar.css";
-import navData from "../../Json/data.json";
+import { getstoredata } from "../../Json/fetchData";
 
 const MobileNavbar = ({ closeMenu }) => {
-  const navbar = navData["0"]; // load JSON
+  const [navbar, setNavbar] = useState(null);
   const [openSub, setOpenSub] = useState(null);
+
+  // Load navbar data from localStorage
+  useEffect(() => {
+    const stored = getstoredata();
+
+    if (stored) {
+      setNavbar(stored["0"]);  // navbar data key = "0"
+    } else {
+      // If fetch is not completed yet, retry after 500ms
+      const timer = setTimeout(() => {
+        const retryData = getstoredata();
+        if (retryData) setNavbar(retryData["0"]);
+      }, 500);
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const toggleSub = (name) => {
     setOpenSub((prev) => (prev === name ? null : name));
   };
+
+  if (!navbar) return null; // wait until data loads
 
   return (
     <div className="mobile-menu">
@@ -20,7 +39,7 @@ const MobileNavbar = ({ closeMenu }) => {
       </div>
 
       <ul className="mobile-links">
-        {navbar.menu.map((item) =>
+        {navbar.menu?.map((item) =>
           item.type === "single" ? (
             <li key={item.name} className="mobile-link" onClick={closeMenu}>
               <a href={item.link}>{item.name}</a>
@@ -30,14 +49,12 @@ const MobileNavbar = ({ closeMenu }) => {
               <div className="mobile-toggle" onClick={() => toggleSub(item.name)}>
                 {item.name}
                 <span
-                  className={`caret ${
-                    openSub === item.name ? "open" : ""
-                  }`}
+                  className={`caret ${openSub === item.name ? "open" : ""}`}
                 />
               </div>
 
               <div className={`mobile-sub ${openSub === item.name ? "show" : ""}`}>
-                {item.items.map((sub) => (
+                {item.items?.map((sub) => (
                   <div
                     key={sub.name}
                     className="mobile-sub-item"
