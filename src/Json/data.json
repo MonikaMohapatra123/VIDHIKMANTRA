@@ -11,7 +11,6 @@
   ]
 }
 ,
-
   "1": {
     "page": "home",
 
@@ -159,12 +158,8 @@
     }
   ]
 }
-
-
-
   }
   ,
-
   "2": {
     "page": "footer",
     "topbarText": "Advocating Integrity. Delivering Justice.",
@@ -200,7 +195,5 @@
     "copyright":
       "© 2025 VIDHIKMANTRA. All Rights Reserved."
   }
-
-
 
 }
